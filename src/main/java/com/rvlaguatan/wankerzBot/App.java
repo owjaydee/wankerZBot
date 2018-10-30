@@ -21,7 +21,7 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 public class App extends ListenerAdapter {
 	public static void main(String[] args) throws Exception {
 		
-		JDA jda = new JDABuilder("NTAzODY1ODQ0NDY4Njc4NjU3.Dq8tPQ.NqVxvTmhBf9DryHvzbfvVdSuo2o").build();
+		JDA jda = new JDABuilder(Config.getToken()).build();
 		jda.addEventListener(new App());
 		jda.addEventListener(new FirstUserJoinListener());
 		jda.addEventListener(new PingCommand());
