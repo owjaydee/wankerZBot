@@ -1,6 +1,6 @@
 package com.rvlaguatan.wankerzBot.Commands;
 
-import com.rvlaguatan.wankerzBot.Ref;
+import com.rvlaguatan.wankerzBot.Config;
 
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
@@ -17,7 +17,7 @@ public class CommandsCommand extends ListenerAdapter {
 					Message objMsg = evt.getMessage();
 			
 	
-					if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "commands")) {
+					if (objMsg.getContentRaw().equalsIgnoreCase(Config.prefix + "commands")) {
 						objMsgCh.sendMessage(objUser.getAsMention() + (CommandList.getCommandList())).queue();
 	}
 

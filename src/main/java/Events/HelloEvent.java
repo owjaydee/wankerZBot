@@ -1,6 +1,6 @@
 package Events;
 
-import com.rvlaguatan.wankerzBot.Ref;
+
 import com.rvlaguatan.wankerzBot.Commands.CommandList;
 
 import net.dv8tion.jda.core.entities.Message;

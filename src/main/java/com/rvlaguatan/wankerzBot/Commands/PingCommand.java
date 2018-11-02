@@ -1,6 +1,6 @@
 package com.rvlaguatan.wankerzBot.Commands;
 
-import com.rvlaguatan.wankerzBot.Ref;
+import com.rvlaguatan.wankerzBot.Config;
 import com.rvlaguatan.wankerzBot.Listeners.Users;
 
 import net.dv8tion.jda.core.entities.Message;
@@ -18,7 +18,7 @@ public class PingCommand extends ListenerAdapter {
 					Message objMsg = evt.getMessage();
 			
 	
-					if (objMsg.getContentRaw().equalsIgnoreCase(Ref.prefix + "ping")) {
+					if (objMsg.getContentRaw().equalsIgnoreCase(Config.prefix + "ping")) {
 						objMsgCh.sendMessage(objUser.getAsMention() + "Pong!").queue();
 	}
 					
