@@ -12,20 +12,32 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 public class HelloEvent extends ListenerAdapter {
 
 	public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-		//String messageSent = event.getMessage().getContentRaw();
-		// Objects
-		User objUser = event.getAuthor();
-		MessageChannel objMsgCh = event.getChannel();
-		Message objMsg = event.getMessage();
-		
-		if (objMsg.getContentRaw().equalsIgnoreCase("Hey"+"Hi"+"Hello"+"suh dude"+"meddl"+":heyguys:")) {
-			objMsgCh.sendMessage(objUser.getAsMention() + ("Well, hello there ! ")).queue();
+		String messageSent = event.getMessage().getContentRaw();
+		if(messageSent.equalsIgnoreCase("Hey")){	
+			event.getChannel().sendMessage("Well hello there "+event.getMessage().getAuthor().getAsMention()).queue();
+		}else if (messageSent.equalsIgnoreCase("Hi")) {
+			event.getChannel().sendMessage("Ich grüße Sie, Meister "+event.getMessage().getAuthor().getAsMention()).queue();
 			
 			
-		//if(messageSent.equalsIgnoreCase("Hey"+"Hi"+"Hello"+"suh dude"+"meddl"+":heyguys:")) {
-			//event.getChannel().sendMessage("Well, hello there ! ").queue();
-			//System.out.println("TestHello");
-		}
+		}else if (messageSent.equalsIgnoreCase("hello")) {
+			event.getChannel().sendMessage("Was geht ab ? "+event.getMessage().getAuthor().getAsMention()).queue();
+			
+		}else if (messageSent.equalsIgnoreCase("meddl")) {
+			event.getChannel().sendMessage("Doppelmeddl "+event.getMessage().getAuthor().getAsMention()).queue();
+			
+		}else if (messageSent.equalsIgnoreCase("suh dude")) {
+			event.getChannel().sendMessage("suhhh dude "+event.getMessage().getAuthor().getAsMention()).queue();
+			
+		}else if (messageSent.contains(event.getGuild().getEmotesByName(":heyguys:", true))) {
+			event.getChannel().sendMessage(":heyguys: "+event.getMessage().getAuthor().getAsMention()).queue();
+			
+			
+			
+			
 		
 	}
 }
+}
+
+
+
