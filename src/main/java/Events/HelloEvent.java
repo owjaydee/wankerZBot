@@ -28,12 +28,14 @@ public class HelloEvent extends ListenerAdapter {
 		}else if (messageSent.equalsIgnoreCase("suh dude")) {
 			event.getChannel().sendMessage("suhhh dude "+event.getMessage().getAuthor().getAsMention()).queue();
 			
-		}else if (messageSent.) {
-			event.getChannel().addReactionById(event.getMessageId(), ":heyguys:");
+		}else if (messageSent.contains(event.getGuild().getEmotesByName(":heyguys:", true).toString())) {
+			event.getChannel().addReaction("🏳️‍🌈");
+		}else if (messageSent.contains("heyguys")) {
+			event.getChannel().addReactionById(event.getMessageId(), ":heyguys:").queue();;
 			
 			
-			//(event.getGuild().getEmoteById(294430989889830912l))
-			
+		System.out.println(event.getGuild().getEmotes());
+		
 		
 	}
 }
